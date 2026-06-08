@@ -3,448 +3,549 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>CobrAR — Sistema POS Online para Comercios en Argentina</title>
-<meta name="description" content="Registrá ventas en segundos, controlá stock, manejá fiados y facturá con ARCA. El POS online más completo para kioscos, almacenes e indumentarias. Gratis para empezar."/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<script>document.documentElement.className='js'</script>
+<title>Cobrar · Ventas, stock y fiados para tu comercio</title>
+<meta name="description" content="Cobrar es el sistema de ventas, stock y fiados para kioscos, almacenes y autoservicios argentinos. Registrá cada venta, controlá el stock y cobrá los fiados sin libreta. Andás en 5 minutos."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="nav">
-<div class="container">
-<div class="nav-inner">
-  <a href="#" class="logo">
-    <div class="logo-box">C</div>
-    <span class="logo-name">Cobr<span>AR</span></span>
+<header id="nav">
+<div class="wrap nav-inner">
+  <a href="#" class="logo" aria-label="Cobrar, inicio">
+    <div style="display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; overflow:hidden;">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none">
+        <rect width="64" height="64" rx="17" fill="#2563EB"/>
+        <polyline points="17,32 27,43 47,22" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="logo-name" style="font-family:'Plus Jakarta Sans',sans-serif; text-transform:lowercase; font-size:22px; margin-left:-2px;">cobrar</span>
   </a>
-  <ul class="nav-links">
-    <li><a href="#features">Producto</a></li>
-    <li><a href="#compare">Comparar</a></li>
-    <li><a href="#pricing">Precios</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
+  <nav class="nav-links" aria-label="Secciones">
+    <a href="#features">Qué hace</a>
+    <a href="#compare">Comparar</a>
+    <a href="#pricing">Precios</a>
+    <a href="#faq">Preguntas</a>
+  </nav>
   <div class="nav-ctas">
-    <a href="https://cobrar-app-phi.vercel.app/login" class="link-in">Iniciar sesión</a>
-    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-g btn-nav">Probar gratis →</a>
+    <button id="themeToggle" class="btn-theme" aria-label="Cambiar tema" type="button">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://cobrar-app-phi.vercel.app/login" class="link-in">Entrar</a>
+    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-ink">Probar gratis</a>
   </div>
 </div>
-</div>
-</nav>
+</header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-glow"></div>
-<div class="hero-grid"></div>
-<div class="container">
-<div class="hero-wrap">
-  <div class="hero-content">
-    <div class="chip"><span class="chip-dot"></span> Nuevo · IA incluida en todos los planes</div>
-    <h1>Cobrá en<br/><em>segundos.</em><br/>Manejá todo.</h1>
-    <p class="hero-sub">El sistema POS online que entiende al comerciante argentino. Sin instalaciones, sin letra chica. Empezás en 5 minutos.</p>
+<div class="wrap hero-grid">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="dot"></span> Para kioscos, almacenes y autoservicios</p>
+    <h1>Cambiá la libreta<br/>por <span class="accent">una pantalla.</span></h1>
+    <p class="lead">El sistema de ventas, stock y fiados pensado para el comerciante argentino. Sin instalar nada, empezás a vender en cinco minutos.</p>
     <div class="hero-btns">
-      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-g btn-lg">Empezar gratis →</a>
-      <a href="#demo" class="btn btn-o btn-lg">Ver demo</a>
+      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-orange btn-lg">Abrir mi caja gratis</a>
+      <a href="#demo" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
     </div>
     <div class="hero-proof">
-      <div class="avatars">
-        <div class="av">M</div>
-        <div class="av">L</div>
-        <div class="av">R</div>
+      <div class="stamps">
+        <span class="stamp">M</span>
+        <span class="stamp">L</span>
+        <span class="stamp">R</span>
       </div>
-      <div class="proof-txt">
-        <strong>+1.200 comercios</strong>
-        ya usan CobrAR hoy
-      </div>
+      <p>Ya lo usan <strong>1.200 comercios</strong> de todo el país.</p>
     </div>
   </div>
-  <div class="pos-wrap">
-    <div class="pos-card">
-      <div class="pos-head">
-        <span class="pos-head-t">🛒 Venta #4821</span>
-        <span class="pos-head-b">● En curso</span>
+
+  <div class="hero-ticket-area">
+    <!-- PRODUCT MOCK: sale summary -->
+    <div class="receipt" role="img" aria-label="Resumen de una venta: dos gaseosas, un alfajor y agua, total siete mil cuatrocientos pesos, cobrado.">
+      <div class="receipt-head">
+        <span class="receipt-shop">Kiosco Don Beto</span>
+        <span class="receipt-meta">Venta #4821 · hoy 14:32</span>
       </div>
-      <div class="pos-body">
-        <div class="pos-items">
-          <div class="pos-item">
-            <div class="pos-item-l"><div class="n">Coca Cola 2.25L</div><div class="q">x2 unidades</div></div>
-            <div class="pos-item-p">$3.800</div>
-          </div>
-          <div class="pos-item">
-            <div class="pos-item-l"><div class="n">Alfajor Havanna</div><div class="q">x1 unidad</div></div>
-            <div class="pos-item-p">$1.200</div>
-          </div>
-          <div class="pos-item">
-            <div class="pos-item-l"><div class="n">Agua mineral 1.5L</div><div class="q">x3 unidades</div></div>
-            <div class="pos-item-p">$2.400</div>
-          </div>
-        </div>
-        <div class="pos-div"></div>
-        <div class="pos-total">
-          <span class="pos-total-l">Total a cobrar</span>
-          <span class="pos-total-v">$7.400</span>
-        </div>
-        <div class="pos-btns">
-          <button class="pb cash">💵 Efectivo</button>
-          <button class="pb mp">📱 Mercado Pago</button>
-        </div>
+      <div class="receipt-rows">
+        <div class="rr"><span>Coca Cola 2.25L</span><span class="qty">×2</span><span class="amt">3.800</span></div>
+        <div class="rr"><span>Alfajor Havanna</span><span class="qty">×1</span><span class="amt">1.200</span></div>
+        <div class="rr"><span>Agua mineral 1.5L</span><span class="qty">×3</span><span class="amt">2.400</span></div>
       </div>
+      <div class="receipt-total">
+        <span>TOTAL</span>
+        <span class="rt-amt">$7.400</span>
+      </div>
+      <div class="receipt-pay">
+        <span class="pay-chip">Efectivo</span>
+        <span class="pay-chip done">Cobrado ✓</span>
+      </div>
+      <div class="receipt-foot">Stock actualizado · Ingreso registrado · ¡Gracias!</div>
     </div>
-    <div class="fb fb1">
-      <div class="fb-lbl">Ventas hoy</div>
-      <div class="fb-val">$284k</div>
-      <div class="fb-sub">↑ 18% vs ayer</div>
+    <div class="float-note note-sales">
+      <span class="fn-lbl">Vendido hoy</span>
+      <span class="fn-val">$284.000</span>
+      <span class="fn-sub">↑ 18% que ayer</span>
     </div>
-    <div class="fb fb2">
-      <div class="fb-lbl">Stock bajo</div>
-      <div class="fb-val">3</div>
-      <div class="fb-sub">productos por reponer</div>
+    <div class="float-note note-stock">
+      <span class="fn-lbl">Por reponer</span>
+      <span class="fn-val">3</span>
+      <span class="fn-sub">productos</span>
     </div>
   </div>
-</div>
 </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust">
-<div class="container">
-<div class="trust-inner">
-  <div class="trust-item">✅ Sin instalación</div>
-  <div class="trust-item">✅ 14 días gratis de prueba</div>
-  <div class="trust-item">✅ Sin tarjeta de crédito</div>
-  <div class="trust-item">✅ Soporte en WhatsApp</div>
-  <div class="trust-item">✅ Hecho en Argentina 🇦🇷</div>
+<!-- TRUST STRIP -->
+<div class="ticker" aria-label="Beneficios">
+  <div class="ticker-track">
+    <span>Sin instalación</span>
+    <span>14 días gratis</span>
+    <span>Sin tarjeta de crédito</span>
+    <span>Soporte por WhatsApp</span>
+    <span>Funciona sin internet</span>
+    <span>Hecho en Argentina</span>
+  </div>
 </div>
+
+<!-- PANEL PREVIEW -->
+<section class="panel-section" id="panel">
+<div class="wrap">
+  <header class="sec-head" data-reveal>
+    <h2>El panel, <span class="hl">por dentro.</span></h2>
+    <p class="sec-sub">No es una promesa: es la pantalla que vas a usar todos los días. Reportes claros, la caja al día y todo tu negocio en un solo lugar.</p>
+  </header>
+
+  <div class="panel-window" data-reveal role="img" aria-label="Vista del panel de CobrAR en la pantalla de Reportes: ingresos del período, ganancia estimada, total de ventas y ticket promedio, con un gráfico de ingresos por día y el estado de caja.">
+    <div class="panel-chrome">
+      <span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span>
+      <div class="panel-url">app.cobrar.com/reportes</div>
+    </div>
+    <div class="panel-app">
+      <aside class="panel-side">
+        <div class="ps-brand">
+          <div class="ps-brand-logo">C</div>
+          <div class="ps-brand-meta"><strong>CobrAR Pos</strong><span>#De91 · Propietario</span></div>
+        </div>
+        <nav class="ps-nav">
+          <div class="ps-group">
+            <p>Operación</p>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Punto de Venta</span>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>Compras</span>
+          </div>
+          <div class="ps-group">
+            <p>Catálogo</p>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>Productos</span>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><path d="m16 3 4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg>Movimientos</span>
+          </div>
+          <div class="ps-group">
+            <p>Personas</p>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>Clientes</span>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><circle cx="19" cy="11" r="2"/></svg>Usuarios</span>
+          </div>
+          <div class="ps-group">
+            <p>Análisis</p>
+            <span class="ps-item active"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M18 17V9M13 17V5M8 17v-3"/></svg>Reportes</span>
+          </div>
+          <div class="ps-group">
+            <p>Sistema</p>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>Configuración</span>
+            <span class="ps-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Soporte</span>
+          </div>
+        </nav>
+        <div class="ps-caja">
+          <div class="ps-caja-head">
+            <span><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v0H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-3a2 2 0 0 0 0 4h3"/></svg> Mi Caja</span>
+            <span class="ps-badge">Abierta</span>
+          </div>
+          <div class="ps-caja-amt">Mi efectivo: <strong>$48.500</strong></div>
+          <div class="ps-caja-btn">Gestionar caja</div>
+        </div>
+      </aside>
+
+      <main class="panel-main">
+        <div class="pm-head">
+          <div><h3>Reportes</h3><p>Analizá el rendimiento de tu negocio</p></div>
+          <div class="pm-actions"><span class="pm-chip">Últimos 30 días</span><span class="pm-btn">Aplicar</span></div>
+        </div>
+        <div class="pm-stats">
+          <div class="pm-stat"><span class="pm-ic ic-indigo">$</span><p>Ingresos del período</p><strong>$1.284.500</strong></div>
+          <div class="pm-stat"><span class="pm-ic ic-green">↑</span><p>Ganancia estimada</p><strong>$385.350</strong></div>
+          <div class="pm-stat"><span class="pm-ic ic-purple">≣</span><p>Total de ventas</p><strong>1.842</strong></div>
+          <div class="pm-stat"><span class="pm-ic ic-orange">◷</span><p>Ticket promedio</p><strong>$697</strong></div>
+        </div>
+        <div class="pm-tabs"><span class="active">Resumen</span><span>Ventas</span><span>Movimientos de caja</span></div>
+        <div class="pm-grid">
+          <div class="pm-card pm-chart">
+            <div class="pmc-head">Ingresos y ganancia por día</div>
+            <div class="pm-bars">
+              <i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:48%"></i><i style="--h:71%"></i>
+              <i style="--h:63%"></i><i style="--h:85%"></i><i style="--h:78%"></i>
+            </div>
+          </div>
+          <div class="pm-card">
+            <div class="pmc-head">Estado de caja <strong class="green">$48.500</strong></div>
+            <ul class="pm-rows">
+              <li><span>Hoy 09:12</span><span>Apertura</span><span class="amt">$15.000</span></li>
+              <li><span>Hoy 13:40</span><span>Ingreso</span><span class="amt up">+$28.300</span></li>
+              <li><span>Hoy 16:05</span><span>Retiro</span><span class="amt down">−$5.000</span></li>
+              <li><span>Hoy 18:22</span><span>Ingreso</span><span class="amt up">+$10.200</span></li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <p class="panel-foot" data-reveal>Datos de ejemplo. Tu panel se ve igual, con la información real de tu comercio.</p>
 </div>
-</div>
+</section>
 
 <!-- FEATURES -->
 <section class="features" id="features">
-<div class="container">
-<div class="sec-head reveal">
-  <div class="sec-lbl">01 · Características</div>
-  <h2>Todo lo que tu comercio<br/>necesita, en un solo lugar.</h2>
-  <p class="sec-sub">Diseñado con datos reales de kioscos, almacenes e indumentarias argentinas.</p>
+<div class="wrap">
+  <header class="sec-head" data-reveal>
+    <h2>Lo que antes anotabas en papel,<br/>ahora <span class="hl">lo hace solo.</span></h2>
+    <p class="sec-sub">Pensado con datos reales de kioscos, almacenes e indumentarias. Cada función reemplaza algo que hoy hacés a mano.</p>
+  </header>
+
+  <!-- SPOTLIGHTS -->
+  <div class="spots">
+    <article class="spot spot-blue" data-reveal>
+      <div class="spot-text">
+        <span class="spot-kicker">Exclusivo de CobrAR</span>
+        <h3>Se corta la luz<br/>y seguís vendiendo.</h3>
+        <p>Modo sin conexión de verdad. Anotás las ventas igual y cuando vuelve internet se sincroniza todo solo. Nunca perdés una venta ni un dato.</p>
+      </div>
+      <div class="spot-art offline-art" aria-hidden="true">
+        <span class="off-bolt">Sin conexión</span>
+        <div class="off-bars"><i></i><i></i><i></i><i></i></div>
+        <span class="off-tag">7 ventas guardadas</span>
+      </div>
+    </article>
+
+    <article class="spot spot-orange" data-reveal>
+      <div class="spot-text">
+        <span class="spot-kicker">Adiós a la libreta</span>
+        <h3>Los fiados,<br/>controlados y al día.</h3>
+        <p>Quién te debe, cuánto y desde cuándo. CobrAR lleva la cuenta corriente de cada cliente y te recuerda cobrar. Sin borrones ni hojas sueltas.</p>
+      </div>
+      <div class="spot-art fiados-art" aria-hidden="true">
+        <div class="debt"><span>Marcela R.</span><span class="debt-amt">$8.200</span></div>
+        <div class="debt"><span>Don Julio</span><span class="debt-amt">$3.500</span></div>
+        <div class="debt overdue"><span>Kiosco esquina</span><span class="debt-amt">$12.000</span></div>
+        <span class="debt-note">3 cuentas abiertas · 1 vencida</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- INDEX LIST -->
+  <ol class="feat-index" data-reveal>
+    <li>
+      <span class="fi-num">01</span>
+      <div><h4>Ventas en segundos</h4><p>Escáner de código de barras, búsqueda por nombre o monto rápido. Ticket impreso o por WhatsApp al instante.</p></div>
+    </li>
+    <li>
+      <span class="fi-num">02</span>
+      <div><h4>Stock en tiempo real</h4><p>Se descuenta solo con cada venta. Te avisa qué reponer antes de quedarte sin nada. Sin planillas.</p></div>
+    </li>
+    <li>
+      <span class="fi-num">03</span>
+      <div><h4>Cierre de caja y reportes</h4><p>Cuánto vendiste, con qué medios de pago y qué productos vuelan. La caja cuadra sola al final del día.</p></div>
+    </li>
+    <li>
+      <span class="fi-num">04</span>
+      <div><h4>Catálogo por WhatsApp <span class="tag tag-pro">Pro</span></h4><p>Compartís tu catálogo y recibís los pedidos directo en el sistema, listos para preparar.</p></div>
+    </li>
+    <li>
+      <span class="fi-num">05</span>
+      <div><h4>IA de precios <span class="tag tag-pro">Pro</span></h4><p>Compara tus precios con miles de comercios y te marca dónde estás dejando plata sobre el mostrador.</p></div>
+    </li>
+    <li>
+      <span class="fi-num">06</span>
+      <div><h4>Facturación ARCA <span class="tag tag-soon">Pronto</span></h4><p>Facturas A, B y C con CAE automático. Integración directa, sin intermediarios ni costos ocultos.</p></div>
+    </li>
+  </ol>
 </div>
-<div class="feat-grid">
-  <div class="feat-card reveal">
-    <div class="feat-icon">🛒</div>
-    <h3>Registrá ventas en segundos</h3>
-    <p>Escáner de código de barras, búsqueda por nombre o monto rápido. Ticket impreso o digital al instante.</p>
+</section>
+
+<!-- TIME SAVED CALCULATOR -->
+<section class="calc-section" id="ahorro">
+<div class="wrap calc-grid">
+  <div class="calc-intro" data-reveal>
+    <h2>¿Cuánto tiempo<br/><span class="hl">recuperás por mes?</span></h2>
+    <p class="sec-sub">Movés las barras con los números de tu comercio y calculás las horas que dejás de perder en tareas manuales.</p>
+    <div class="calc-controls">
+      <div class="calc-field">
+        <label for="rngVentas">Ventas por día <output id="outVentas">120</output></label>
+        <input type="range" id="rngVentas" class="slider" min="20" max="500" step="10" value="120" aria-label="Ventas por día"/>
+      </div>
+      <div class="calc-field">
+        <label for="rngCierre">Minutos en cerrar la caja por día <output id="outCierre">25</output></label>
+        <input type="range" id="rngCierre" class="slider" min="5" max="60" step="5" value="25" aria-label="Minutos en cerrar la caja por día"/>
+      </div>
+      <div class="calc-field">
+        <label for="rngStock">Horas de inventario por semana <output id="outStock">6</output></label>
+        <input type="range" id="rngStock" class="slider" min="1" max="25" step="1" value="6" aria-label="Horas de inventario por semana"/>
+      </div>
+    </div>
   </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">📦</div>
-    <h3>Stock en tiempo real</h3>
-    <p>Se actualiza solo con cada venta. Te avisamos qué reponer antes de que se acabe. Sin Excel.</p>
+
+  <div class="calc-result" data-reveal aria-live="polite">
+    <p class="cr-label">Recuperás cada mes</p>
+    <p class="cr-hours"><span id="crHours" class="num">71</span><span class="cr-unit">horas</span></p>
+    <p class="cr-year">Equivale a <strong id="crDays" class="num">106</strong> jornadas de 8 h al año.</p>
+    <ul class="cr-breakdown">
+      <li><span>Registrar ventas</span><span class="num" id="brVentas">+42 h</span></li>
+      <li><span>Cierre de caja</span><span class="num" id="brCierre">+11 h</span></li>
+      <li><span>Inventario y restock</span><span class="num" id="brStock">+16 h</span></li>
+      <li><span>Reportes automáticos</span><span class="num" id="brRep">+3 h</span></li>
+    </ul>
+    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-orange btn-lg cr-cta">Empezar a ahorrar tiempo</a>
+    <p class="cr-fine">Estimación según promedios de comercios que ya usan CobrAR.</p>
   </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">👥</div>
-    <h3>Fiados y cuentas corrientes</h3>
-    <p>Llevá el control de quién te debe, cuánto y desde cuándo. Cobrar nunca fue tan fácil.</p>
-  </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">📊</div>
-    <h3>Reportes del día</h3>
-    <p>Cuánto vendiste, qué métodos de pago usaron, qué productos vuelan. Todo en un dashboard claro.</p>
-  </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">🧾</div>
-    <h3>Facturación ARCA</h3>
-    <p>Facturas A, B y C con CAE automático. Integración directa, sin intermediarios ni costos ocultos.</p>
-    <span class="feat-tag">Próximamente</span>
-  </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">🤖</div>
-    <h3>IA de precios</h3>
-    <p>Comparamos tus precios con miles de comercios y te decimos dónde estás dejando plata sobre la mesa.</p>
-    <span class="feat-tag">Plan Pro</span>
-  </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">📴</div>
-    <h3>Modo sin conexión</h3>
-    <p>¿Se cortó internet? Seguís vendiendo. Cuando vuelve la conexión, todo se sincroniza solo.</p>
-    <span class="feat-tag">Exclusivo CobrAR</span>
-  </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">🏪</div>
-    <h3>Multi-sucursal</h3>
-    <p>Manejá varias bocas desde un solo panel. Reportes unificados o por sucursal. Incluido desde Plan Pro.</p>
-    <span class="feat-tag">Exclusivo CobrAR</span>
-  </div>
-  <div class="feat-card reveal">
-    <div class="feat-icon">💬</div>
-    <h3>Catálogo por WhatsApp</h3>
-    <p>Compartí tu catálogo de productos por WhatsApp y recibí pedidos directamente en el sistema.</p>
-    <span class="feat-tag">Plan Pro</span>
-  </div>
-</div>
 </div>
 </section>
 
 <!-- DEMO -->
-<section class="demo-section" id="demo">
-<div class="container">
-<div class="demo-wrap">
-  <div class="reveal">
-    <div class="sec-lbl">02 · Demo interactivo</div>
-    <h2>Probalo ahora mismo.<br/>Sin registro.</h2>
-    <p class="sec-sub" style="margin-top:14px">Así se ve el POS en acción. Hacé clic en un producto para agregarlo al carrito y simulá una venta real.</p>
+<section class="demo" id="demo">
+<div class="wrap demo-grid">
+  <div class="demo-intro" data-reveal>
+    <h2>Probalo ahora.<br/><span class="hl">Sin registrarte.</span></h2>
+    <p class="sec-sub">Así se vende con CobrAR. Tocá un producto para sumarlo al carrito y cobrá una venta de mentira, como en el mostrador.</p>
+    <ul class="demo-points">
+      <li>Tocá los productos para cargarlos</li>
+      <li>Mirá el total actualizarse al instante</li>
+      <li>Cobrá y mirá el ticket cerrarse</li>
+    </ul>
   </div>
-  <div class="demo-terminal reveal">
-    <div class="demo-bar">
-      <div class="demo-dot r"></div>
-      <div class="demo-dot y"></div>
-      <div class="demo-dot g"></div>
-      <div class="demo-bar-t">CobrAR POS · Demo</div>
+
+  <div class="terminal" data-reveal>
+    <div class="terminal-bar">
+      <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+      <span class="terminal-title">CobrAR · Caja</span>
     </div>
-    <div class="demo-screen" id="demoScreen">
-      <div class="demo-search">
-        <span>🔍</span>
-        <input type="text" placeholder="Buscar producto o escanear código..." readonly/>
-      </div>
+    <div class="terminal-screen" id="demoScreen">
+      <div class="demo-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="text" placeholder="Buscar producto o escanear código…" readonly aria-label="Buscar producto"/></div>
       <div class="demo-prods">
-        <div class="dprod" onclick="addToCart('Coca Cola 2.25L',1900)">
-          <div class="dprod-name">🥤 Coca Cola 2.25L</div>
-          <div class="dprod-price">$1.900</div>
-        </div>
-        <div class="dprod" onclick="addToCart('Alfajor Havanna',1200)">
-          <div class="dprod-name">🍫 Alfajor Havanna</div>
-          <div class="dprod-price">$1.200</div>
-        </div>
-        <div class="dprod" onclick="addToCart('Agua 1.5L',800)">
-          <div class="dprod-name">💧 Agua 1.5L</div>
-          <div class="dprod-price">$800</div>
-        </div>
-        <div class="dprod" onclick="addToCart('Red Bull 250ml',2800)">
-          <div class="dprod-name">⚡ Red Bull 250ml</div>
-          <div class="dprod-price">$2.800</div>
-        </div>
+        <button class="dprod" type="button" onclick="addToCart('Coca Cola 2.25L',1900)"><span class="dp-name">Coca Cola 2.25L</span><span class="dp-price">$1.900</span></button>
+        <button class="dprod" type="button" onclick="addToCart('Alfajor Havanna',1200)"><span class="dp-name">Alfajor Havanna</span><span class="dp-price">$1.200</span></button>
+        <button class="dprod" type="button" onclick="addToCart('Agua 1.5L',800)"><span class="dp-name">Agua 1.5L</span><span class="dp-price">$800</span></button>
+        <button class="dprod" type="button" onclick="addToCart('Red Bull 250ml',2800)"><span class="dp-name">Red Bull 250ml</span><span class="dp-price">$2.800</span></button>
       </div>
       <div class="demo-cart">
-        <div class="demo-cart-title">🛒 Carrito</div>
-        <div class="demo-cart-items" id="cartItems"><span style="color:var(--txt3);font-size:13px">Tocá un producto para agregarlo...</span></div>
-        <div class="demo-total">
-          <span class="demo-total-lbl">Total</span>
-          <span class="demo-total-val" id="demoTotal">$0</span>
-        </div>
-        <button class="demo-cobrar" id="cobrarBtn" onclick="cobrar()">Cobrar →</button>
+        <div class="demo-cart-head">Carrito</div>
+        <div class="demo-cart-items" id="cartItems"><span class="cart-empty">Tocá un producto para empezar…</span></div>
+        <div class="demo-total"><span>Total</span><span class="demo-total-val" id="demoTotal">$0</span></div>
+        <button class="btn btn-orange demo-cobrar" id="cobrarBtn" type="button" onclick="cobrar()">Cobrar venta</button>
       </div>
     </div>
-    <div class="demo-screen" id="demoSuccess" style="display:none">
-      <div class="demo-success">
-        <div class="demo-success-icon">✅</div>
-        <div class="demo-success-txt">¡Venta registrada!</div>
-        <div class="demo-success-sub">Ticket #4822 · Stock actualizado · Ingreso registrado</div>
-        <button class="demo-reset" onclick="resetDemo()">← Nueva venta</button>
-      </div>
+    <div class="terminal-screen success" id="demoSuccess" hidden>
+      <div class="success-mark">✓</div>
+      <p class="success-txt">¡Venta registrada!</p>
+      <p class="success-sub">Ticket #4822 · Stock actualizado · Ingreso anotado</p>
+      <button class="btn btn-ghost" type="button" onclick="resetDemo()">Hacer otra venta</button>
     </div>
   </div>
-</div>
 </div>
 </section>
 
 <!-- COMPARE -->
 <section class="compare" id="compare">
-<div class="container">
-<div class="sec-head reveal">
-  <div class="sec-lbl">03 · Comparación</div>
-  <h2>Honesta. Sin letra chica.</h2>
-  <p class="sec-sub">Comparamos función por función. Si no te convence, te ayudamos a encontrar la herramienta correcta.</p>
-</div>
-<div class="reveal" style="overflow-x:auto">
-<table class="compare-table">
-  <thead>
-    <tr>
-      <th>Característica</th>
-      <th class="us">CobrAR ✦</th>
-      <th>Cobrando.app</th>
-      <th>Otros</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Plan gratuito real</td><td class="us-col chk">✓ Sí</td><td class="cross">✗ No</td><td class="cross">✗ No</td></tr>
-    <tr><td>Precio inicial</td><td class="us-col chk">$0 / $8.900</td><td class="cross">$12.000/mes</td><td class="cross">$15.000+</td></tr>
-    <tr><td>Modo sin conexión</td><td class="us-col chk">✓ Incluido</td><td class="cross">✗ No</td><td class="cross">✗ No</td></tr>
-    <tr><td>Multi-sucursal</td><td class="us-col chk">✓ Desde Pro</td><td class="cross">Solo enterprise</td><td class="cross">Solo enterprise</td></tr>
-    <tr><td>Catálogo WhatsApp</td><td class="us-col chk">✓ Incluido</td><td class="cross">✗ No</td><td class="cross">✗ No</td></tr>
-    <tr><td>Apertura/cierre de caja</td><td class="us-col chk">✓ Incluido</td><td class="cross">✗ No</td><td class="cross">Parcial</td></tr>
-    <tr><td>IA de precios</td><td class="us-col chk">✓ Plan Pro</td><td class="cross">Solo Plan IA</td><td class="cross">✗ No</td></tr>
-    <tr><td>Soporte en WhatsApp</td><td class="us-col chk">✓ Todos los planes</td><td>Solo pago</td><td class="cross">Email</td></tr>
-    <tr><td>Facturación ARCA</td><td class="us-col chk">✓ Próximamente</td><td>Costo adicional</td><td>Costo adicional</td></tr>
-  </tbody>
-</table>
-</div>
+<div class="wrap">
+  <header class="sec-head" data-reveal>
+    <h2>Comparación honesta,<br/><span class="hl">sin letra chica.</span></h2>
+    <p class="sec-sub">Función por función. Si no somos lo que buscás, te lo decimos.</p>
+  </header>
+  <div class="table-scroll" data-reveal>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th scope="col">Característica</th>
+          <th scope="col" class="us">CobrAR</th>
+          <th scope="col">Excel / Papel</th>
+          <th scope="col">Competencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Plan gratuito real</th><td class="us-col yes">Solo 14 días</td><td class="no">Libreta fiado</td><td class="no">No</td></tr>
+        <tr><th scope="row">Precio inicial</th><td class="us-col yes">$12.000 / $15.000</td><td>Pérdida de datos</td><td>Más de $40.000</td></tr>
+        <tr><th scope="row">Funciona sin internet</th><td class="us-col yes">Incluido</td><td class="no">Sí (pero manual)</td><td class="no">No</td></tr>
+        <tr><th scope="row">Multi-sucursal</th><td class="us-col yes">Desde Pro</td><td>Imposible</td><td>Solo enterprise</td></tr>
+        <tr><th scope="row">Catálogo por WhatsApp</th><td class="us-col yes">Incluido</td><td class="no">No</td><td class="no">No</td></tr>
+        <tr><th scope="row">Apertura y cierre de caja</th><td class="us-col yes">Incluido</td><td class="no">Cálculos tediosos</td><td>Parcial</td></tr>
+        <tr><th scope="row">IA de precios</th><td class="us-col yes">Plan Pro</td><td>No</td><td class="no">No</td></tr>
+        <tr><th scope="row">Soporte por WhatsApp</th><td class="us-col yes">Todos los planes</td><td>No existe</td><td>Email</td></tr>
+        <tr><th scope="row">Facturación ARCA</th><td class="us-col yes">Pronto</td><td>Manual / Contador</td><td>Costo adicional</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 </section>
 
 <!-- PRICING -->
 <section class="pricing" id="pricing">
-<div class="container">
-<div class="sec-head reveal">
-  <div class="sec-lbl">04 · Planes</div>
-  <h2>Elegí tu plan.<br/>Sin sorpresas.</h2>
-  <p class="sec-sub">Empezás gratis. Si necesitás más, escalás cuando quieras.</p>
-  <div class="price-toggle">
-    <button class="toggle-btn active" id="btnMensual" onclick="setToggle('mensual')">Mensual</button>
-    <button class="toggle-btn" id="btnAnual" onclick="setToggle('anual')">Anual</button>
-    <span class="discount-badge">−20% ahorrás</span>
-  </div>
-</div>
-<div class="plans reveal">
-  <div class="plan">
-    <div class="plan-name">Free</div>
-    <div class="plan-price"><sup>$</sup><span class="plan-p" data-m="0" data-a="0">0</span></div>
-    <div class="plan-period">por mes · siempre gratis</div>
-    <div class="plan-sep"></div>
-    <div class="plan-feats">
-      <div class="pf"><span class="pf-ico">✓</span> Hasta 100 productos</div>
-      <div class="pf"><span class="pf-ico">✓</span> 50 ventas por día</div>
-      <div class="pf"><span class="pf-ico">✓</span> 1 usuario</div>
-      <div class="pf"><span class="pf-ico">✓</span> Reportes básicos</div>
-      <div class="pf"><span class="pf-ico">✓</span> Clientes y fiados</div>
+<div class="wrap">
+  <header class="sec-head" data-reveal>
+    <h2>Elegí tu plan.<br/><span class="hl">Sin sorpresas.</span></h2>
+    <p class="sec-sub">Empezás gratis. Si tu comercio crece, escalás cuando quieras.</p>
+    <div class="toggle">
+      <button class="toggle-btn active" id="btnMensual" type="button" onclick="setToggle('mensual')">Mensual</button>
+      <button class="toggle-btn" id="btnAnual" type="button" onclick="setToggle('anual')">Anual</button>
+      <span class="toggle-save">Ahorrás 20%</span>
     </div>
-    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-o plan-cta">Empezar gratis →</a>
+  </header>
+
+  <div class="tags" data-reveal>
+    <article class="ptag">
+      <span class="ptag-hole"></span>
+      <h3 class="ptag-name">Esencial</h3>
+      <div class="ptag-price"><sup>$</sup><span class="plan-p" data-m="15000" data-a="12000">15.000</span></div>
+      <p class="ptag-period">por mes · 14 días de prueba gratis</p>
+      <p class="ptag-old plan-old-price" data-m="" data-a="$15.000/mes"></p>
+      <ul class="ptag-feats">
+        <li>Ventas con lector de código de barras</li>
+        <li>Gestión de stock y reposición</li>
+        <li>Reportes de ventas diarios</li>
+        <li>Clientes y cuentas corrientes</li>
+        <li>Hasta 3.500 productos</li>
+        <li>Hasta 2 usuarios</li>
+        <li><span class="tag-pronto">Pronto</span> Facturación ARCA (Adicional)</li>
+      </ul>
+      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-ghost ptag-cta">Empezar gratis</a>
+    </article>
+
+    <article class="ptag featured">
+      <span class="ptag-hole"></span>
+      <span class="ptag-badge">El más elegido</span>
+      <h3 class="ptag-name">Pro</h3>
+      <div class="ptag-price"><sup>$</sup><span class="plan-p" data-m="25000" data-a="20000">25.000</span></div>
+      <p class="ptag-period">por mes · IVA incluido</p>
+      <p class="ptag-old plan-old-price" data-m="" data-a="$25.000/mes"></p>
+      <ul class="ptag-feats">
+        <li>Todo lo del Plan Esencial</li>
+        <li>Módulo de Catálogo Online</li>
+        <li>Hasta 10.000 productos</li>
+        <li>Hasta 5 usuarios</li>
+        <li><span class="tag-pronto">Pronto</span> Facturación ARCA (Adicional)</li>
+      </ul>
+      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-orange ptag-cta">Activar Pro</a>
+    </article>
+
+    <article class="ptag">
+      <span class="ptag-hole"></span>
+      <h3 class="ptag-name">IA</h3>
+      <div class="ptag-price"><sup>$</sup><span class="plan-p" data-m="28500" data-a="22800">28.500</span></div>
+      <p class="ptag-period">por mes · IVA incluido</p>
+      <p class="ptag-old plan-old-price" data-m="" data-a="$28.500/mes"></p>
+      <ul class="ptag-feats">
+        <li>Todo lo del Plan Pro</li>
+        <li>Productos sugeridos por IA</li>
+        <li>Alertas de productos sin rotación</li>
+        <li>Hasta 15.000 productos</li>
+        <li>Hasta 15 usuarios</li>
+        <li><span class="tag-pronto">Pronto</span> Escaneo inteligente de facturas</li>
+        <li><span class="tag-pronto">Pronto</span> Soporte para balanzas</li>
+      </ul>
+      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-ghost ptag-cta">Contactar Ventas</a>
+    </article>
   </div>
-  <div class="plan featured">
-    <div class="plan-badge">Más elegido</div>
-    <div class="plan-name">Starter</div>
-    <div class="plan-price"><sup>$</sup><span class="plan-p" data-m="13500" data-a="10800">13.500</span></div>
-    <div class="plan-period">por mes · IVA incl.</div>
-    <div class="plan-old plan-old-price" data-m="" data-a="$13.500/mes"></div>
-    <div class="plan-sep"></div>
-    <div class="plan-feats">
-      <div class="pf"><span class="pf-ico">✓</span> Todo lo de Free +</div>
-      <div class="pf"><span class="pf-ico">✓</span> Hasta 5.000 productos</div>
-      <div class="pf"><span class="pf-ico">✓</span> Ventas ilimitadas</div>
-      <div class="pf"><span class="pf-ico">✓</span> 2 usuarios</div>
-      <div class="pf"><span class="pf-ico">✓</span> Modo sin conexión</div>
-      <div class="pf"><span class="pf-ico">✓</span> Reportes avanzados</div>
-      <div class="pf"><span class="pf-ico">✓</span> Soporte WhatsApp</div>
-    </div>
-    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-g plan-cta">Activar Starter →</a>
-  </div>
-  <div class="plan">
-    <div class="plan-name">Pro</div>
-    <div class="plan-price"><sup>$</sup><span class="plan-p" data-m="22500" data-a="18000">22.500</span></div>
-    <div class="plan-period">por mes · IVA incl.</div>
-    <div class="plan-old plan-old-price" data-m="" data-a="$22.500/mes"></div>
-    <div class="plan-sep"></div>
-    <div class="plan-feats">
-      <div class="pf"><span class="pf-ico">✓</span> Todo lo de Starter +</div>
-      <div class="pf"><span class="pf-ico">✓</span> Productos ilimitados</div>
-      <div class="pf"><span class="pf-ico">✓</span> 5 usuarios</div>
-      <div class="pf"><span class="pf-ico">✓</span> Multi-sucursal</div>
-      <div class="pf"><span class="pf-ico">✓</span> Catálogo WhatsApp</div>
-      <div class="pf"><span class="pf-ico">✓</span> IA de precios</div>
-      <div class="pf"><span class="pf-ico">✓</span> API acceso</div>
-    </div>
-    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-o plan-cta">Activar Pro →</a>
-  </div>
-</div>
 </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials">
-<div class="container">
-<div class="sec-head reveal">
-  <div class="sec-lbl">05 · Testimonios</div>
-  <h2>Lo que dicen los que<br/>ya lo usan.</h2>
-</div>
-<div class="test-grid">
-  <div class="test-card reveal">
-    <div class="test-stars">★★★★★</div>
-    <p class="test-text">Antes cerraba la caja con papel y lápiz. Ahora CobrAR me dice exactamente cuánto vendí y qué se fue. En serio, no sé cómo vivía sin esto.</p>
-    <div class="test-author">
-      <div class="test-av" style="background:#FF6B35">M</div>
-      <div><div class="test-name">Marcela R.</div><div class="test-biz">Kiosco · Palermo, CABA</div></div>
-    </div>
+<section class="quotes">
+<div class="wrap">
+  <header class="sec-head" data-reveal>
+    <h2>Comerciantes que ya<br/><span class="hl">dejaron el papel.</span></h2>
+  </header>
+  <div class="notes">
+    <figure class="note" data-reveal>
+      <blockquote>Antes cerraba la caja con lápiz y papel. Ahora Cobrar me dice exactamente cuánto vendí y qué se fue. No sé cómo laburaba antes.</blockquote>
+      <figcaption><span class="note-av" style="--av:oklch(0.50 0.10 162)">M</span><span><strong>Marcela R.</strong>Kiosco · Palermo, CABA</span></figcaption>
+    </figure>
+    <figure class="note" data-reveal>
+      <blockquote>Tengo dos almacenes y por fin los veo en un solo lado. El modo sin internet me salvó cuando se cortó la luz un sábado a la tarde.</blockquote>
+      <figcaption><span class="note-av" style="--av:oklch(0.44 0.05 248)">L</span><span><strong>Lucas F.</strong>Almacén · Rosario, Santa Fe</span></figcaption>
+    </figure>
+    <figure class="note" data-reveal>
+      <blockquote>Probé otra app pero era cara para arrancar. Con el plan gratis lo usé dos semanas y ya pasé al Starter. El soporte por WhatsApp es real.</blockquote>
+      <figcaption><span class="note-av" style="--av:oklch(0.52 0.07 200)">R</span><span><strong>Romina G.</strong>Indumentaria · Córdoba</span></figcaption>
+    </figure>
   </div>
-  <div class="test-card reveal">
-    <div class="test-stars">★★★★★</div>
-    <p class="test-text">Tengo dos almacenes y por fin puedo ver los dos en un solo lugar. El modo sin internet me salvó cuando se cortó la luz en pleno fin de semana.</p>
-    <div class="test-author">
-      <div class="test-av" style="background:#7C3AED">L</div>
-      <div><div class="test-name">Lucas F.</div><div class="test-biz">Almacén · Rosario, Santa Fe</div></div>
-    </div>
-  </div>
-  <div class="test-card reveal">
-    <div class="test-stars">★★★★★</div>
-    <p class="test-text">Probé Cobrando.app pero era muy caro para empezar. CobrAR me dio el plan gratis, lo usé dos semanas y ya pasé al Starter. Excelente soporte.</p>
-    <div class="test-author">
-      <div class="test-av" style="background:#06B6D4">R</div>
-      <div><div class="test-name">Romina G.</div><div class="test-biz">Indumentaria · Córdoba</div></div>
-    </div>
-  </div>
-</div>
 </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq" id="faq">
-<div class="container">
-<div class="sec-head reveal">
-  <div class="sec-lbl">06 · FAQ</div>
-  <h2>Dudas frecuentes.</h2>
-</div>
-<div class="faq-list">
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-q">¿Necesito instalar algo? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">No. CobrAR funciona 100% desde el navegador web, sin instalaciones ni descargas. Podés empezar desde tu celular, tablet o computadora en menos de 5 minutos.</div>
+<div class="wrap">
+  <header class="sec-head" data-reveal>
+    <h2>Preguntas <span class="hl">que nos hacen.</span></h2>
+  </header>
+  <div class="faq-list" data-reveal>
+    <details class="faq-item">
+      <summary>¿Necesito instalar algo?<span class="faq-mark"></span></summary>
+      <div class="faq-a">No. Cobrar funciona 100% desde el navegador, sin descargas. Lo abrís desde el celular, la tablet o la computadora y en cinco minutos estás vendiendo.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Qué pasa si se corta internet?<span class="faq-mark"></span></summary>
+      <div class="faq-a">Seguís vendiendo igual. Cobrar guarda las ventas en el modo sin conexión y cuando vuelve internet sincroniza todo solo, sin perder un dato.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Puedo usar mi propia impresora?<span class="faq-mark"></span></summary>
+      <div class="faq-a">Sí. Es compatible con impresoras térmicas de 58mm y 80mm. También podés mandar el ticket por WhatsApp o email, sin imprimir nada.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cuándo llega la facturación ARCA?<span class="faq-mark"></span></summary>
+      <div class="faq-a">Estamos integrando con ARCA. Sale en los próximos meses, incluida en todos los planes pagos y sin costo extra.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Puedo cancelar cuando quiera?<span class="faq-mark"></span></summary>
+      <div class="faq-a">Sí, cuando quieras y sin penalidades. Tus datos quedan disponibles para exportar durante 30 días después de cancelar.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cómo es el soporte?<span class="faq-mark"></span></summary>
+      <div class="faq-a">Por WhatsApp, en todos los planes. Sin bots ni formularios: un equipo real que te responde rápido, también fuera del horario de oficina.</div>
+    </details>
   </div>
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-q">¿Qué pasa si se corta internet? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">CobrAR tiene modo offline integrado. Seguís vendiendo normalmente y cuando se restaura la conexión, todo se sincroniza automáticamente. Sin pérdida de datos.</div>
-  </div>
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-q">¿Puedo usar mi propia impresora? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">Sí. Compatible con impresoras térmica estándar de 58mm y 80mm. También podés enviar tickets por WhatsApp o email sin necesidad de impresora.</div>
-  </div>
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-q">¿Cuándo llega la facturación ARCA? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">Estamos en proceso de integración con ARCA/AFIP. Se lanza en los próximos meses incluida en todos los planes pagos, sin costo adicional.</div>
-  </div>
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-q">¿Puedo cancelar cuando quiero? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">Sí, podés cancelar en cualquier momento sin penalidades. Tus datos quedan disponibles para exportar durante 30 días después de la cancelación.</div>
-  </div>
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-q">¿Cómo es el soporte? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">Soporte real por WhatsApp para todos los planes. Sin bots, sin formularios. Un equipo real que responde rápido, incluso fuera del horario laboral habitual.</div>
-  </div>
-</div>
 </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-<div class="container">
-<div class="cta-box reveal">
-  <h2>Manejá tu negocio sin<br/><em>que te consuma el día.</em></h2>
-  <p>14 días gratis, sin tarjeta de crédito, sin contrato. Migramos tus datos.</p>
-  <div class="cta-btns">
-    <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-g btn-lg">Empezar gratis ahora →</a>
-    <a href="https://wa.me/5491100000000" class="btn btn-o btn-lg">💬 Hablar por WhatsApp</a>
+<div class="wrap">
+  <div class="cta-box" data-reveal>
+    <h2>Abrí tu caja hoy.<br/>Cerrala <span class="accent">cuadrada.</span></h2>
+    <p>14 días gratis, sin tarjeta y sin contrato. Te ayudamos a pasar tus datos.</p>
+    <div class="cta-btns">
+      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-orange btn-lg">Empezar gratis ahora</a>
+      <a href="https://wa.me/5491100000000" class="btn btn-ghost-light btn-lg">Escribirnos por WhatsApp</a>
+    </div>
+    <p class="cta-fine">Sin tarjeta · Sin contrato · Cancelás cuando quieras</p>
   </div>
-  <p class="cta-fine">Sin tarjeta · Sin contrato · Cancelás cuando quieras</p>
-</div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="container">
-<div class="footer-inner">
+<div class="wrap footer-inner">
   <div class="footer-brand">
-    <a href="#" class="logo">
-      <div class="logo-box">C</div>
-      <span class="logo-name">Cobr<span>AR</span></span>
+    <a href="#" class="logo" aria-label="Cobrar, inicio">
+      <div style="display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; overflow:hidden;">
+        <svg width="30" height="30" viewBox="0 0 64 64" fill="none">
+          <rect width="64" height="64" rx="17" fill="#2563EB"/>
+          <polyline points="17,32 27,43 47,22" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="logo-name" style="font-family:'Plus Jakarta Sans',sans-serif; text-transform:lowercase; font-size:22px; margin-left:-2px;">cobrar</span>
     </a>
-    <p>POS y gestión para kioscos, almacenes, indumentarias y más. Hecho en Argentina 🇦🇷 para el comercio real.</p>
+    <p>Ventas, stock y fiados para kioscos, almacenes, indumentarias y autoservicios. Hecho en Argentina para el comercio de verdad.</p>
   </div>
   <div class="footer-col">
     <h4>Producto</h4>
     <ul>
-      <li><a href="#features">Características</a></li>
+      <li><a href="#features">Qué hace</a></li>
       <li><a href="#pricing">Precios</a></li>
       <li><a href="#compare">Comparar</a></li>
       <li><a href="#demo">Demo</a></li>
@@ -466,16 +567,9 @@
     </ul>
   </div>
 </div>
-<div class="footer-bottom">
-  <span>© 2026 CobrAR · Todos los derechos reservados</span>
-  <span style="display:flex; gap: 15px; align-items:center;">
-    <span>Desarrollado en Argentina 🇦🇷</span>
-    <span style="color:var(--border);">|</span>
-    <a href="https://codetm.site" target="_blank" rel="noopener noreferrer" style="color:var(--txt2); text-decoration:none; display:flex; align-items:center; gap:6px; transition:color 0.2s;" onmouseover="this.style.color='#5252ff'" onmouseout="this.style.color='var(--txt2)'">
-      Desarrollado por <strong style="color:white; font-family:var(--font-head); letter-spacing:0.5px;">CodeTM</strong>
-    </a>
-  </span>
-</div>
+<div class="wrap footer-bottom">
+  <span>© 2026 Cobrar · Todos los derechos reservados</span>
+  <a href="https://codetm.site" target="_blank" rel="noopener noreferrer" class="by-codetm">Desarrollado por <strong>CodeTM</strong></a>
 </div>
 </footer>
 
