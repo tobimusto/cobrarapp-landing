@@ -3,59 +3,60 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  /* Clean professional "ledger" system — OKLCH */
-  --bg:oklch(0.984 0.004 235);          /* near-white, faint cool */
-  --surface:oklch(1 0 0);                /* white panels */
-  --panel:oklch(0.967 0.006 235);        /* subtle tinted panel */
-  --ink:oklch(0.235 0.018 248);          /* deep cool near-black */
-  --ink-2:oklch(0.445 0.017 248);        /* secondary text */
-  --ink-3:oklch(0.545 0.014 248);        /* muted text (4.5:1 verified) */
-  --brand:oklch(0.515 0.112 162);        /* deep professional green */
-  --brand-strong:oklch(0.44 0.10 162);   /* on-light text / button fill */
-  --brand-tint:oklch(0.962 0.026 162);   /* light green wash */
-  --brand-tint-2:oklch(0.93 0.045 162);
-  --line:oklch(0.235 0.018 248 / .11);
-  --line-2:oklch(0.235 0.018 248 / .07);
-  --line-strong:oklch(0.235 0.018 248 / .20);
+  --bg: #E0E8F2;
+  --surface: #FFFFFF;
+  --panel: #EEF3F8;
+  --ink: #101828;
+  --ink-2: #475467;
+  --ink-3: #98A2B3;
+  --brand: #FF5252;
+  --brand-strong: #FF6B6B;
+  --brand-tint: rgba(255,82,82,.08);
+  --brand-tint-2: rgba(255,82,82,.15);
+  --line: #C9D6E5;
+  --line-2: rgba(201,214,229,.6);
+  --line-strong: rgba(201,214,229,.8);
 
-  --shadow-sm:0 1px 2px oklch(0.235 0.018 248 / .06),0 1px 1px oklch(0.235 0.018 248 / .04);
-  --shadow:0 4px 14px oklch(0.235 0.018 248 / .07),0 1px 3px oklch(0.235 0.018 248 / .05);
-  --shadow-lg:0 22px 48px oklch(0.235 0.018 248 / .10),0 6px 16px oklch(0.235 0.018 248 / .06);
+  --shadow-sm: 0 1px 2px rgba(0,0,0, .05), 0 1px 1px rgba(0,0,0, .03);
+  --shadow: 0 4px 14px rgba(0,0,0, .06), 0 1px 3px rgba(0,0,0, .04);
+  --shadow-lg: 0 22px 48px rgba(0,0,0, .08), 0 6px 16px rgba(0,0,0, .05);
 
-  --font:'Hanken Grotesk',-apple-system,system-ui,'Segoe UI',sans-serif;
+  --font:'DM Sans',-apple-system,system-ui,'Segoe UI',sans-serif;
+  --font-display: 'Sora', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --r:10px;--r-sm:7px;--r-lg:16px;
   --ease:cubic-bezier(.22,1,.36,1);
 
   --z-base:2;--z-float:5;--z-nav:200;
 
-  --nav-bg: oklch(0.984 0.004 235 / .8);
+  --nav-bg: rgba(238,243,248,.8);
   --btn-ink-bg: var(--ink);
   --btn-ink-text: #fff;
   --dark-panel: var(--ink);
 }
 
 :root.dark-theme {
-  --bg: oklch(0.12 0.01 248);
-  --surface: oklch(0.16 0.01 248);
-  --panel: oklch(0.19 0.01 248);
-  --ink: oklch(0.98 0 0);
-  --ink-2: oklch(0.80 0.01 248);
-  --ink-3: oklch(0.65 0.01 248);
-  --brand: oklch(0.65 0.112 162);
-  --brand-strong: oklch(0.60 0.10 162);
-  --brand-tint: oklch(0.20 0.04 162);
-  --brand-tint-2: oklch(0.24 0.06 162);
-  --line: oklch(0.98 0 0 / .11);
-  --line-2: oklch(0.98 0 0 / .07);
-  --line-strong: oklch(0.98 0 0 / .20);
+  --bg: #0C1827;
+  --surface: #112136;
+  --panel: #152840;
+  --ink: #E2E8F0;
+  --ink-2: #94A3B8;
+  --ink-3: #64748B;
+  --brand: #FF5252;
+  --brand-strong: #FF6B6B;
+  --brand-tint: rgba(255,82,82,.08);
+  --brand-tint-2: rgba(255,82,82,.15);
+  --line: #1E3A5F;
+  --line-2: #284B7A;
+  --line-strong: #335C94;
 
   --shadow-sm: 0 1px 2px rgba(0,0,0, .3), 0 1px 1px rgba(0,0,0, .2);
   --shadow: 0 4px 14px rgba(0,0,0, .4), 0 1px 3px rgba(0,0,0, .3);
   --shadow-lg: 0 22px 48px rgba(0,0,0, .5), 0 6px 16px rgba(0,0,0, .3);
 
-  --nav-bg: oklch(0.12 0.01 248 / .8);
-  --btn-ink-bg: oklch(0.98 0 0);
-  --btn-ink-text: oklch(0.12 0.01 248);
+  --nav-bg: rgba(12,24,39,.85);
+  --btn-ink-bg: var(--brand);
+  --btn-ink-text: #fff;
   --dark-panel: var(--surface);
 }
 
@@ -87,11 +88,11 @@ body{
   font-family:var(--font);font-weight:430;line-height:1.6;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
-.num{font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.num{font-family:var(--font-mono);letter-spacing:-.01em}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:var(--z-base)}
 ::selection{background:var(--brand-tint-2);color:var(--ink)}
 
-h1,h2,h3,h4{font-family:var(--font);font-weight:760;letter-spacing:-.022em;line-height:1.08;text-wrap:balance}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:760;letter-spacing:-.022em;line-height:1.08;text-wrap:balance}
 .accent,.hl{color:var(--brand-strong)}
 
 img,svg{display:block;max-width:100%}
@@ -507,8 +508,8 @@ footer{border-top:1px solid var(--line);padding:54px 0 30px;background:var(--sur
 
 .tag-pronto {
   font-size: 0.6rem;
-  background: rgba(5,255,136,0.2);
-  color: #05FF88;
+  background: rgba(255,82,82,0.2);
+  color: #FF5252;
   padding: 2px 6px;
   border-radius: 4px;
   text-transform: uppercase;
