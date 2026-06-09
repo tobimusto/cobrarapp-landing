@@ -658,5 +658,37 @@
 </dialog>
 
 <script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      const keys = Object.keys(localStorage);
+      const authKey = keys.find(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
+      if (authKey) {
+        const token = localStorage.getItem(authKey);
+        if (token) {
+          const session = JSON.parse(token);
+          if (session && session.user && session.user.email) {
+            const navCtas = document.querySelector('.nav-ctas');
+            if (navCtas) {
+              const themeBtn = document.getElementById('themeToggle');
+              navCtas.innerHTML = '';
+              if (themeBtn) navCtas.appendChild(themeBtn);
+              
+              const userWrapper = document.createElement('div');
+              userWrapper.style.cssText = 'display:flex; align-items:center; gap: 16px; margin-left: 8px;';
+              userWrapper.innerHTML = `
+                <span style="font-size: 13px; color: var(--ink-2); font-weight: 600;">${session.user.email}</span>
+                <a href="https://cobrar-lr9j.vercel.app/pos" class="btn btn-ink" style="padding: 7px 16px; font-size: 14px;">Ir al panel</a>
+              `;
+              navCtas.appendChild(userWrapper);
+            }
+          }
+        }
+      }
+    } catch(e) {
+      console.error('Error reading session', e);
+    }
+  });
+</script>
 </body>
 </html>
