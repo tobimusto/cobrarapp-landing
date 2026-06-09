@@ -62,7 +62,10 @@ function resetDemo() {
 }
 
 // PRICING TOGGLE
+let currentPeriod = 'mensual';
+
 function setToggle(mode) {
+  currentPeriod = mode;
   document.getElementById('btnMensual').classList.toggle('active', mode === 'mensual');
   document.getElementById('btnAnual').classList.toggle('active', mode === 'anual');
   document.querySelectorAll('.plan-p').forEach(el => {
@@ -71,6 +74,14 @@ function setToggle(mode) {
   });
   document.querySelectorAll('.plan-old-price').forEach(el => {
     el.textContent = mode === 'anual' ? el.dataset.a : el.dataset.m;
+  });
+  document.querySelectorAll('.plan-yearly-lbl').forEach(el => {
+    if (mode === 'anual') {
+      const total = parseInt(el.dataset.total).toLocaleString('es-AR');
+      el.textContent = 'Facturado anualmente ($' + total + ')';
+    } else {
+      el.textContent = '';
+    }
   });
 }
 
@@ -171,3 +182,88 @@ themeBtn.addEventListener('click', (e) => {
     );
   });
 });
+});
+
+// CHECKOUT MODAL & PAYMENTS
+const PAYMENT_LINKS = {
+  mensual: {
+    esencial: { rebill: 'https://pay.rebill.com/LINK_ESENCIAL_MENSUAL', mp: 'https://mpago.la/LINK_ESENCIAL_MENSUAL' },
+    pro:      { rebill: 'https://pay.rebill.com/LINK_PRO_MENSUAL', mp: 'https://mpago.la/LINK_PRO_MENSUAL' },
+    ia:       { rebill: 'https://pay.rebill.com/LINK_IA_MENSUAL', mp: 'https://mpago.la/LINK_IA_MENSUAL' }
+  },
+  anual: {
+    esencial: { rebill: 'https://pay.rebill.com/LINK_ESENCIAL_ANUAL', mp: 'https://mpago.la/LINK_ESENCIAL_ANUAL' },
+    pro:      { rebill: 'https://pay.rebill.com/LINK_PRO_ANUAL', mp: 'https://mpago.la/LINK_PRO_ANUAL' },
+    ia:       { rebill: 'https://pay.rebill.com/LINK_IA_ANUAL', mp: 'https://mpago.la/LINK_IA_ANUAL' }
+  }
+};
+
+const PLAN_DATA = {
+  esencial: { name: 'Plan Esencial', priceMensual: 15000, priceAnual: 12000 },
+  pro:      { name: 'Plan Pro', priceMensual: 25000, priceAnual: 20000 },
+  ia:       { name: 'Plan IA', priceMensual: 28500, priceAnual: 22800 }
+};
+
+let selectedPlanId = null;
+
+function openCheckout(planId) {
+  selectedPlanId = planId;
+  const plan = PLAN_DATA[planId];
+  const isAnual = currentPeriod === 'anual';
+  
+  const price = isAnual ? plan.priceAnual : plan.priceMensual;
+  const durationText = isAnual ? '1 año' : '1 mes';
+  const subtotal = isAnual ? (plan.priceMensual * 12) : plan.priceMensual;
+  const discount = isAnual ? (subtotal - (plan.priceAnual * 12)) : 0;
+  const finalTotal = isAnual ? (plan.priceAnual * 12) : plan.priceMensual;
+
+  document.getElementById('cksPlanName').textContent = plan.name;
+  document.getElementById('cksDuration').textContent = durationText;
+  document.getElementById('cksSubtotal').textContent = '$' + subtotal.toLocaleString('es-AR');
+  
+  const discEl = document.getElementById('cksDiscount');
+  if (discount > 0) {
+    discEl.textContent = '-$' + discount.toLocaleString('es-AR');
+    discEl.parentElement.style.display = 'flex';
+  } else {
+    discEl.parentElement.style.display = 'none';
+  }
+
+  document.getElementById('cksTotal').textContent = '$' + finalTotal.toLocaleString('es-AR');
+  document.getElementById('cksTotalSub').textContent = isAnual ? ('$' + finalTotal.toLocaleString('es-AR') + ' / año') : ('$' + finalTotal.toLocaleString('es-AR') + ' / mes');
+
+  updateMethodUI();
+  document.getElementById('checkoutModal').showModal();
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutModal').close();
+}
+
+function updateMethodUI() {
+  const method = document.querySelector('input[name="payment_method"]:checked').value;
+  document.querySelectorAll('.ck-method').forEach(el => el.classList.remove('active'));
+  document.querySelector('input[name="payment_method"]:checked').closest('.ck-method').classList.add('active');
+  
+  const note = document.getElementById('cksTotalNote');
+  if (method === 'rebill') {
+    note.textContent = 'Se activa la renovación automática.';
+  } else {
+    note.textContent = 'Renovación manual via MercadoPago.';
+  }
+}
+
+function submitCheckout() {
+  const name = document.getElementById('ckName').value.trim();
+  const email = document.getElementById('ckEmail').value.trim();
+  
+  if (!name || !email) {
+    alert('Por favor ingresá tu nombre completo y email antes de continuar.');
+    return;
+  }
+  
+  const method = document.querySelector('input[name="payment_method"]:checked').value;
+  const link = PAYMENT_LINKS[currentPeriod][selectedPlanId][method];
+  
+  window.location.href = link;
+}

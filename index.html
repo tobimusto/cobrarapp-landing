@@ -402,7 +402,7 @@
       <span class="ptag-hole"></span>
       <h3 class="ptag-name">Esencial</h3>
       <div class="ptag-price"><sup>$</sup><span class="plan-p" data-m="15000" data-a="12000">15.000</span></div>
-      <p class="ptag-period">por mes · 14 días de prueba gratis</p>
+      <p class="ptag-period">por mes · 14 días de prueba gratis<br><span class="plan-yearly-lbl" data-total="144000"></span></p>
       <p class="ptag-old plan-old-price" data-m="" data-a="$15.000/mes"></p>
       <ul class="ptag-feats">
         <li>Ventas con lector de código de barras</li>
@@ -413,7 +413,8 @@
         <li>Hasta 2 usuarios</li>
         <li><span class="tag-pronto">Pronto</span> Facturación ARCA (Adicional)</li>
       </ul>
-      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-ghost ptag-cta">Empezar gratis</a>
+      <button class="btn btn-ghost ptag-cta" type="button" onclick="openCheckout('esencial')">Elegir este plan</button>
+      <p class="plan-trial">Probar 14 días gratis</p>
     </article>
 
     <article class="ptag featured">
@@ -421,7 +422,7 @@
       <span class="ptag-badge">El más elegido</span>
       <h3 class="ptag-name">Pro</h3>
       <div class="ptag-price"><sup>$</sup><span class="plan-p" data-m="25000" data-a="20000">25.000</span></div>
-      <p class="ptag-period">por mes · IVA incluido</p>
+      <p class="ptag-period">por mes · IVA incluido<br><span class="plan-yearly-lbl" data-total="240000"></span></p>
       <p class="ptag-old plan-old-price" data-m="" data-a="$25.000/mes"></p>
       <ul class="ptag-feats">
         <li>Todo lo del Plan Esencial</li>
@@ -430,14 +431,15 @@
         <li>Hasta 5 usuarios</li>
         <li><span class="tag-pronto">Pronto</span> Facturación ARCA (Adicional)</li>
       </ul>
-      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-orange ptag-cta">Activar Pro</a>
+      <button class="btn btn-orange ptag-cta" type="button" onclick="openCheckout('pro')">Elegir este plan</button>
+      <p class="plan-trial">Probar 7 días gratis</p>
     </article>
 
     <article class="ptag">
       <span class="ptag-hole"></span>
       <h3 class="ptag-name">IA</h3>
       <div class="ptag-price"><sup>$</sup><span class="plan-p" data-m="28500" data-a="22800">28.500</span></div>
-      <p class="ptag-period">por mes · IVA incluido</p>
+      <p class="ptag-period">por mes · IVA incluido<br><span class="plan-yearly-lbl" data-total="273600"></span></p>
       <p class="ptag-old plan-old-price" data-m="" data-a="$28.500/mes"></p>
       <ul class="ptag-feats">
         <li>Todo lo del Plan Pro</li>
@@ -448,7 +450,8 @@
         <li><span class="tag-pronto">Pronto</span> Escaneo inteligente de facturas</li>
         <li><span class="tag-pronto">Pronto</span> Soporte para balanzas</li>
       </ul>
-      <a href="https://cobrar-app-phi.vercel.app/login" class="btn btn-ghost ptag-cta">Contactar Ventas</a>
+      <button class="btn btn-ghost ptag-cta" type="button" onclick="openCheckout('ia')">Elegir este plan</button>
+      <p class="plan-trial">Probar 7 días gratis</p>
     </article>
   </div>
 </div>
@@ -572,6 +575,87 @@
   <a href="https://codetm.site" target="_blank" rel="noopener noreferrer" class="by-codetm">Desarrollado por <strong>CodeTM</strong></a>
 </div>
 </footer>
+
+<!-- CHECKOUT MODAL -->
+<dialog id="checkoutModal" class="checkout-modal">
+  <div class="ck-container">
+    <button class="ck-close" type="button" onclick="closeCheckout()" aria-label="Cerrar modal"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg> Volver a planes</button>
+    <div class="ck-grid">
+      <!-- Izquierda: Formulario -->
+      <div class="ck-form-col">
+        <h3 class="ck-title">Datos del usuario</h3>
+        <p class="ck-sub">Usamos estos datos para identificar el pago y enviar el comprobante.</p>
+        
+        <div class="ck-fields">
+          <div class="ck-field">
+            <label for="ckName">Nombre completo</label>
+            <input type="text" id="ckName" placeholder="Tu nombre">
+          </div>
+          <div class="ck-field">
+            <label for="ckEmail">Email</label>
+            <input type="email" id="ckEmail" placeholder="correo@ejemplo.com">
+          </div>
+        </div>
+
+        <h3 class="ck-title" style="margin-top: 32px;">¿Cómo querés pagar?</h3>
+        <p class="ck-sub">Con suscripción automática no tenés que acordarte de renovar.</p>
+
+        <div class="ck-methods">
+          <label class="ck-method active">
+            <input type="radio" name="payment_method" value="rebill" checked onchange="updateMethodUI()">
+            <div class="ckm-head">
+              <strong>Débito automático</strong> <span class="tag tag-reco">Recomendado</span>
+              <span class="ckm-radio"></span>
+            </div>
+            <p>Ingresá tu tarjeta de crédito o débito y el plan se renueva solo cada período. Cancelás cuando quieras.</p>
+          </label>
+
+          <label class="ck-method">
+            <input type="radio" name="payment_method" value="mp" onchange="updateMethodUI()">
+            <div class="ckm-head">
+              <strong>MercadoPago</strong>
+              <span class="ckm-radio"></span>
+            </div>
+            <p>Pagá este período con tarjeta, efectivo, transferencia o billetera virtual. Renovás manualmente cuando vence.</p>
+          </label>
+        </div>
+      </div>
+
+      <!-- Derecha: Resumen -->
+      <div class="ck-summary-col">
+        <div class="cks-box">
+          <h3 class="ck-title">Resumen</h3>
+          <p class="ck-sub">El importe que se te cobra hoy.</p>
+          
+          <ul class="cks-list">
+            <li><span>Plan</span><span id="cksPlanName">Plan IA</span></li>
+            <li><span>Duración</span><span id="cksDuration">1 mes</span></li>
+            <li><span>Subtotal</span><span id="cksSubtotal">$38.000</span></li>
+            <li><span>Descuento (20%)</span><span id="cksDiscount">-$9.500</span></li>
+            <li><span>Modalidad</span><span>Suscripción</span></li>
+          </ul>
+          
+          <div class="cks-total">
+            <div class="cks-t-left">
+              <span>Total</span>
+              <small id="cksTotalNote">Se activa la renovación automática.</small>
+            </div>
+            <div class="cks-t-right">
+              <strong id="cksTotal">$28.500</strong>
+              <small id="cksTotalSub">$28.500 / mes</small>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-ink cks-btn" onclick="submitCheckout()">
+            <svg viewBox="0 0 24 24"><path d="M19 11H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2z"/><path d="M16 11V7a4 4 0 0 0-8 0v4"/></svg>
+            Suscribirse
+          </button>
+          <p class="cks-secure"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Pago seguro con cifrado SSL</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>
