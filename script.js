@@ -182,7 +182,6 @@ themeBtn.addEventListener('click', (e) => {
     );
   });
 });
-});
 
 // CHECKOUT MODAL & PAYMENTS
 const PAYMENT_LINKS = {
